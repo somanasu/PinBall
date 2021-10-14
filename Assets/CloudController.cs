@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CloudController : MonoBehaviour
+{
+    //Å‘åƒTƒCƒY
+    private float minimum = 1.0f;
+    //Šg‘åk¬ƒXƒs[ƒh
+    private float magSpeed = 10.0f;
+    //Šg‘å—¦
+    private float magnification = 0.07f;
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        //‰_‚ğŠg‘åk¬
+        this.transform.localScale = new Vector3(this.minimum + Mathf.Sin(Time.time* this.magSpeed) * this.magnification, this.transform.localScale.y, this.minimum + Mathf.Sin(Time.time * this.magSpeed) * this.magnification);
+    }
+}
